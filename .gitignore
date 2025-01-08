@@ -39,3 +39,6 @@ build/
 
 ### Allure-results ###
 allure-results/
+
+### config-properties ###
+config.properties
