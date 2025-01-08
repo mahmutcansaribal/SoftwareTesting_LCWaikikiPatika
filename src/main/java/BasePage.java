@@ -28,5 +28,8 @@ public class BasePage {
     public List<WebElement> findAllProducts(By locator){
         return driver.findElements(locator);
     }
+    public void navigateToUrl(){
+        driver.get(baseUrl);
+    }
 
 }
