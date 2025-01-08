@@ -6,6 +6,7 @@ public class EndToEndTest extends BaseTest{
     HomePage homePage;
     LogOnPage logOnPage;
     CategorySelection categorySelection;
+    ProductPage productPage;
 
 
 
@@ -26,11 +27,24 @@ public class EndToEndTest extends BaseTest{
         logOnPage.setLoginBtn();
     }
     @Test(priority = 3,dependsOnMethods = {"logOnTest"})
-    public void navigateToCategorySelection(){
+    public void navigateToCategorySelectionTest(){
         categorySelection = new CategorySelection(driver);
 
         categorySelection.moveToHeaderItem();
         categorySelection.hoverOverTabHeaderItem();
         categorySelection.clickOnCategoryZoneItem();
+    }
+
+    @Test(priority = 4, dependsOnMethods = {"navigateToCategorySelectionTest"})
+    public void productFilterTest(){
+        productPage = new ProductPage(driver);
+        //Body Filter
+        productPage.setFilterOptionBody5_6();
+        productPage.setFilterOptionBody6_7();
+        productPage.setFilterOptionBody6();
+        //Color Filter
+        productPage.setSelectColor();
+        //Sort DropDown
+        productPage.setSelectSortBtn();
     }
 }
