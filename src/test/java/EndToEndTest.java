@@ -46,5 +46,7 @@ public class EndToEndTest extends BaseTest{
         productPage.setSelectColor();
         //Sort DropDown
         productPage.setSelectSortBtn();
+        //Click Best Seller
+        productPage.setBestSellers();
     }
 }

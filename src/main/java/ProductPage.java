@@ -29,7 +29,7 @@ public class ProductPage extends BasePage{
     WebElement selectSortBtn;
 
     By selectSortBtn2 = By.xpath("//button[@class='dropdown-button__button']");
-
+    By bestSellers = By.xpath("//a[normalize-space()='En çok satanlar']");
     public ProductPage(WebDriver driver){
         super(driver);
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10),Duration.ofSeconds(2));
@@ -62,18 +62,19 @@ public class ProductPage extends BasePage{
         wait.until(ExpectedConditions.elementToBeClickable(filterOptionBody6_7)).click();
         threadFonk();
     }
-
     public void setSelectColor(){
         //((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", selectColor);
         actions.moveToElement(selectColor).perform();
         wait.until(ExpectedConditions.elementToBeClickable(selectColor)).click();
         threadFonk();
     }
-
     public void setSelectSortBtn(){
         threadFonk();
         // ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", selectSortBtn2);
         wait.until(ExpectedConditions.elementToBeClickable(selectSortBtn2)).click();
+    }
+    public void setBestSellers(){
+        wait.until(ExpectedConditions.elementToBeClickable(bestSellers)).click();
     }
 
 }
