@@ -5,6 +5,7 @@ public class EndToEndTest extends BaseTest{
     private TestConfig config;
     HomePage homePage;
     LogOnPage logOnPage;
+    CategorySelection categorySelection;
 
 
 
@@ -23,5 +24,13 @@ public class EndToEndTest extends BaseTest{
         logOnPage.setContinueBtn();
         logOnPage.setPassword(config.getPassword());
         logOnPage.setLoginBtn();
+    }
+    @Test(priority = 3,dependsOnMethods = {"logOnTest"})
+    public void navigateToCategorySelection(){
+        categorySelection = new CategorySelection(driver);
+
+        categorySelection.moveToHeaderItem();
+        categorySelection.hoverOverTabHeaderItem();
+        categorySelection.clickOnCategoryZoneItem();
     }
 }
