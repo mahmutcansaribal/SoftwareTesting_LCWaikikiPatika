@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.List;
 
 
 public class ProductPage extends BasePage{
@@ -30,6 +31,7 @@ public class ProductPage extends BasePage{
 
     By selectSortBtn2 = By.xpath("//button[@class='dropdown-button__button']");
     By bestSellers = By.xpath("//a[normalize-space()='En çok satanlar']");
+    By currentPriceLocator = By.xpath("//span[@class='current-price']");
     public ProductPage(WebDriver driver){
         super(driver);
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10),Duration.ofSeconds(2));
@@ -76,6 +78,22 @@ public class ProductPage extends BasePage{
     public void setBestSellers(){
         wait.until(ExpectedConditions.elementToBeClickable(bestSellers)).click();
     }
+
+    public void selectProduct(int i){
+        List<WebElement> products = getAllProducts();
+        if (i >= 0 && i < products.size()) {  // İndeksin geçerli olduğundan emin olun
+            products.get(i).click();
+        } else {
+            System.out.println("Geçersiz ürün indeksi: " + i);
+        }
+    }
+    //Ürünleri listeleyebilmek için kullanılan fonksiyon.
+    private List<WebElement> getAllProducts(){
+        List<WebElement> products = findAllProducts(currentPriceLocator);
+        System.out.println("Toplam Ürün sayısı : "+products.size());
+        return products;
+    }
+
 
 }
 
