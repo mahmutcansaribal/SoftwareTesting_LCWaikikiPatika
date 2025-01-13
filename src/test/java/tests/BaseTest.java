@@ -1,18 +1,20 @@
+package tests;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeMethod;
 
 public class BaseTest {
 
     public WebDriver driver;
     public String baseUrl = "https://www.lcw.com/";
 
-    @BeforeSuite
+    @BeforeMethod
     public void setUp(){
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--disable-blink-features=AutomationControlled");
+       // options.addArguments("--disable-blink-features=AutomationControlled");
 
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();

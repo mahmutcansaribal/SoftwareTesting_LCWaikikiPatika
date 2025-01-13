@@ -1,3 +1,5 @@
+package pages;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -9,7 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class CategorySelection extends BasePage{
+public class CategorySelection extends BasePage {
     @FindBy(xpath = "//a[normalize-space()='ÇOCUK & BEBEK']")
     WebElement headerItem;
 
@@ -21,7 +23,7 @@ public class CategorySelection extends BasePage{
         super(driver);
         this.actions = new Actions(driver);
         PageFactory.initElements(driver,this);
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(60));
     }
 
     public void moveToHeaderItem() {

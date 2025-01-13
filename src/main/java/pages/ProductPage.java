@@ -1,7 +1,6 @@
-
+package pages;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -14,9 +13,7 @@ import java.time.Duration;
 import java.util.List;
 
 
-public class ProductPage extends BasePage{
-
-
+public class ProductPage extends BasePage {
 
     @FindBy(xpath = "//div[contains(@class, 'collapsible-filter-container__content-area--size-filter')]//span[@class='filter-option__text' and text()='5-6 Yaş']")
     WebElement filterOptionBody5_6;
@@ -31,57 +28,55 @@ public class ProductPage extends BasePage{
 
     By selectSortBtn2 = By.xpath("//button[@class='dropdown-button__button']");
     By bestSellers = By.xpath("//a[normalize-space()='En çok satanlar']");
-    By currentPriceLocator = By.xpath("//span[@class='current-price']");
+    By currentPriceLocator = By.xpath("//div[@class='product-image']");
+
     public ProductPage(WebDriver driver){
         super(driver);
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10),Duration.ofSeconds(2));
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(30));
         this.actions = new Actions(driver);
         PageFactory.initElements(driver, this);
     }
 
-    public void threadFonk(){
-        try{
-            Thread.sleep(2100);
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-    }
 
     public void setFilterOptionBody5_6(){
         actions.moveToElement(filterOptionBody5_6).perform();
         wait.until(ExpectedConditions.elementToBeClickable(filterOptionBody5_6)).click();
-        threadFonk();
 
     }
 
     public void setFilterOptionBody6(){
+        //BasePage'den gelen fonksiyonumuz.
+        waitToLoadingAnimation();
+
         actions.moveToElement(filterOptionBody6).perform();
         wait.until(ExpectedConditions.elementToBeClickable(filterOptionBody6)).click();
-        threadFonk();
     }
     public void setFilterOptionBody6_7(){
+        waitToLoadingAnimation();
+
         actions.moveToElement(filterOptionBody6_7).perform();
         wait.until(ExpectedConditions.elementToBeClickable(filterOptionBody6_7)).click();
-        threadFonk();
     }
+
     public void setSelectColor(){
-        //((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", selectColor);
+        waitToLoadingAnimation();
+
         actions.moveToElement(selectColor).perform();
         wait.until(ExpectedConditions.elementToBeClickable(selectColor)).click();
-        threadFonk();
     }
     public void setSelectSortBtn(){
-        threadFonk();
-        // ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", selectSortBtn2);
+        waitToLoadingAnimation();
         wait.until(ExpectedConditions.elementToBeClickable(selectSortBtn2)).click();
     }
     public void setBestSellers(){
+        waitToLoadingAnimation();
         wait.until(ExpectedConditions.elementToBeClickable(bestSellers)).click();
     }
-
     public void selectProduct(int i){
+        waitToLoadingAnimation();
+
         List<WebElement> products = getAllProducts();
-        if (i >= 0 && i < products.size()) {  // İndeksin geçerli olduğundan emin olun
+        if (i >= 0 && i < products.size()) {
             products.get(i).click();
         } else {
             System.out.println("Geçersiz ürün indeksi: " + i);
