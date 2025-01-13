@@ -136,6 +136,7 @@ public class BasePage {
 - HomePage ve diğer Page Class'lar BasePage sınıfından türediği için, driver nesnesi bu sınıflarda da kullanılabilir.
 
 Bu şekilde homePage ve diğer Page sınıfları, driver nesnesine erişim sağlar.
+![Akış Şeması](https://github.com/mahmutcansaribal/SoftwareTesting_LCWaikikiPatika/blob/main/AkisSemasi/AkisSemasi.png?raw=true)
 
 ---
 ### BasePage
