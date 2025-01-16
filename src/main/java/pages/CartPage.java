@@ -77,7 +77,7 @@ public class CartPage extends BasePage{
 
     public void clickPaymentStep(){
         wait.until(ExpectedConditions.visibilityOf(paymentStep));
-        navigateToFavoritePage();
+        threadFonk();
     }
 
     public void clickIfNotSelected(WebElement element) {
