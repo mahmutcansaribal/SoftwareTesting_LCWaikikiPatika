@@ -29,7 +29,7 @@ public class ProductTest extends BaseTest{
         performLogin();
         selectCategory();
         applyFiltersAndSorting();
-        selectProduct(3);
+        selectProduct();
 
     }
     @Step("Go to the login page")
@@ -64,8 +64,8 @@ public class ProductTest extends BaseTest{
                 .setBestSellers();
     }
     @Step("Select product number {0} from the list")
-    public void selectProduct(int productIndex) {
-        productPage.selectProduct(productIndex);
+    public void selectProduct() {
+        productPage.selectProduct();
     }
 
 

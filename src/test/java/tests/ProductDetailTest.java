@@ -30,7 +30,7 @@ public class ProductDetailTest extends BaseTest{
         performLogin();
         selectCategory();
         applyFiltersAndSorting();
-        selectProduct(3);
+        selectProduct();
         selectBodySize(1);
         addToCart();
 
@@ -67,8 +67,8 @@ public class ProductDetailTest extends BaseTest{
                 .setBestSellers();
     }
     @Step("Select product number {0} from the list")
-    public void selectProduct(int productIndex) {
-        productPage.selectProduct(productIndex);
+    public void selectProduct() {
+        productPage.selectProduct();
     }
 
     @Step("Select body size option {0}")

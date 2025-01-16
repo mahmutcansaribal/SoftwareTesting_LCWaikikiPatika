@@ -28,6 +28,7 @@ public class ProductPage extends BasePage {
     WebElement selectSortBtn;
 
     By selectSortBtn2 = By.xpath("//button[@class='dropdown-button__button']");
+    private int urunIndex = 2;
     By bestSellers = By.xpath("//a[normalize-space()='En çok satanlar']");
     By currentPriceLocator = By.xpath("//div[@class='product-image']");
 
@@ -81,14 +82,14 @@ public class ProductPage extends BasePage {
         wait.until(ExpectedConditions.elementToBeClickable(bestSellers)).click();
         return this;
     }
-    public ProductPage selectProduct(int i){
+    public ProductPage selectProduct(){
         waitToLoadingAnimation();
 
         List<WebElement> products = getAllProducts();
-        if (i >= 0 && i < products.size()) {
-            products.get(i).click();
+        if (urunIndex >= 0 && urunIndex < products.size()) {
+            products.get(urunIndex).click();
         } else {
-            System.out.println("Geçersiz ürün indeksi: " + i);
+            System.out.println("Geçersiz ürün indeksi: " + urunIndex);
         }
         return this;
     }
