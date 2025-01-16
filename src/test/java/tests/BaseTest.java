@@ -5,7 +5,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
+import utilities.ExtentReportManager;
 
+@Listeners(ExtentReportManager.class)
 public class BaseTest {
 
     public WebDriver driver;
