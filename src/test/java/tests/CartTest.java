@@ -30,15 +30,22 @@ public class CartTest extends BaseTest {
         cartPage = new CartPage(driver);
 
         goToLoginPage();
+
         performLogin();
+
         selectCategory();
+
         applyFiltersAndSorting();
+
         selectProduct(3);
         selectBodySize(1);
+
         addToCart();
         goToCart();
+
         increaseItemCount();
         addToFavorites();
+
         verifyProductDetails();
         proceedToPayment();
     }
@@ -104,5 +111,6 @@ public class CartTest extends BaseTest {
     @Step("Proceed to the payment step")
     public void proceedToPayment() {
         cartPage.clickPaymentStep();
+        homePage.goToFavorites();
     }
 }
