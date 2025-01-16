@@ -16,10 +16,10 @@ public class HomePage extends BasePage {
     @FindBy(id="user_1_")
     WebElement logInBtn;
     //    @FindBy(xpath = "//a[@class='cart-action__btn cart-action__btn--bg-blue']")
-//    WebElement logOnBtn;
+    //    WebElement logOnBtn;
     By logOnBtn = By.xpath("//a[@class='cart-action__btn cart-action__btn--bg-blue']");
-
     By cartContanierLocator = By.xpath("//span[normalize-space()='Sepetim']");
+    By favoritesBtnLocator = By.xpath("//span[normalize-space()='Favorilerim']");
     //Ürün sayısının artıp artmadığını kontrol etmek için sepeti buluyoruz.
     By cartItemCount = By.cssSelector(".badge-circle");
     public HomePage(WebDriver driver){
@@ -29,15 +29,19 @@ public class HomePage extends BasePage {
         this.actions = new Actions(driver);
     }
 
+    //Giriş yap
     public void goToLoginPage(){
         wait.until(ExpectedConditions.visibilityOfElementLocated(cookiesAccept));
         click(cookiesAccept);
+
         wait.until(ExpectedConditions.visibilityOf(logInBtn));
         actions.moveToElement(logInBtn).perform();
+
         wait.until(ExpectedConditions.visibilityOfElementLocated(logOnBtn));
         click(logOnBtn);
     }
 
+    // Sepete Git
     public void goToCart(){
         wait.until(ExpectedConditions.visibilityOfElementLocated(cartItemCount));
         String count = find(cartItemCount).getText();
@@ -47,6 +51,9 @@ public class HomePage extends BasePage {
         }else{
             System.out.println("Ürün bulunamadı!");
         }
-
+    }
+    public void goToFavorites(){
+        wait.until(ExpectedConditions.elementToBeClickable(favoritesBtnLocator));
+        click(favoritesBtnLocator);
     }
 }

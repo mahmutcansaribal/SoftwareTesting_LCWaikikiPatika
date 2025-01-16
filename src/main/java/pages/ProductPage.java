@@ -1,6 +1,7 @@
 package pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -39,6 +40,7 @@ public class ProductPage extends BasePage {
 
 
     public void setFilterOptionBody5_6(){
+        waitToLoadingAnimation();
         actions.moveToElement(filterOptionBody5_6).perform();
         wait.until(ExpectedConditions.elementToBeClickable(filterOptionBody5_6)).click();
 
@@ -66,7 +68,9 @@ public class ProductPage extends BasePage {
     }
     public void setSelectSortBtn(){
         waitToLoadingAnimation();
-        wait.until(ExpectedConditions.elementToBeClickable(selectSortBtn2)).click();
+        scrollToElement(selectSortBtn);
+        ((JavascriptExecutor) driver).executeScript("window.scrollBy(0, -200);");
+        actions.moveToElement(selectSortBtn).click().perform();
     }
     public void setBestSellers(){
         waitToLoadingAnimation();
