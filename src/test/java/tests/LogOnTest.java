@@ -30,13 +30,15 @@ public class LogOnTest extends BaseTest {
     }
     @Step("Enter email and click on 'Continue' button")
     public void setEmailAndContinue() {
-        logOnPage.setEmail();
-        logOnPage.setContinueBtn();
+        logOnPage
+            .setEmail()
+            .setContinueBtn();
     }
     @Step("Enter password and click on 'Login' button")
     public void performLogin() {
         setEmailAndContinue();
-        logOnPage.setPassword();
-        logOnPage.setLoginBtn();
+        logOnPage
+                .setPassword()
+                .setLoginBtn();
     }
 }

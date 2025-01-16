@@ -39,44 +39,49 @@ public class ProductPage extends BasePage {
     }
 
 
-    public void setFilterOptionBody5_6(){
+    public ProductPage setFilterOptionBody5_6(){
         waitToLoadingAnimation();
         actions.moveToElement(filterOptionBody5_6).perform();
         wait.until(ExpectedConditions.elementToBeClickable(filterOptionBody5_6)).click();
-
+        return this;
     }
 
-    public void setFilterOptionBody6(){
+    public ProductPage setFilterOptionBody6(){
         //BasePage'den gelen fonksiyonumuz.
         waitToLoadingAnimation();
 
         actions.moveToElement(filterOptionBody6).perform();
         wait.until(ExpectedConditions.elementToBeClickable(filterOptionBody6)).click();
+        return this;
     }
-    public void setFilterOptionBody6_7(){
+    public ProductPage setFilterOptionBody6_7(){
         waitToLoadingAnimation();
 
         actions.moveToElement(filterOptionBody6_7).perform();
         wait.until(ExpectedConditions.elementToBeClickable(filterOptionBody6_7)).click();
+        return this;
     }
 
-    public void setSelectColor(){
+    public ProductPage setSelectColor(){
         waitToLoadingAnimation();
 
         actions.moveToElement(selectColor).perform();
         wait.until(ExpectedConditions.elementToBeClickable(selectColor)).click();
+        return this;
     }
-    public void setSelectSortBtn(){
+    public ProductPage setSelectSortBtn(){
         waitToLoadingAnimation();
         scrollToElement(selectSortBtn);
         ((JavascriptExecutor) driver).executeScript("window.scrollBy(0, -200);");
         actions.moveToElement(selectSortBtn).click().perform();
+        return this;
     }
-    public void setBestSellers(){
+    public ProductPage setBestSellers(){
         waitToLoadingAnimation();
         wait.until(ExpectedConditions.elementToBeClickable(bestSellers)).click();
+        return this;
     }
-    public void selectProduct(int i){
+    public ProductPage selectProduct(int i){
         waitToLoadingAnimation();
 
         List<WebElement> products = getAllProducts();
@@ -85,6 +90,7 @@ public class ProductPage extends BasePage {
         } else {
             System.out.println("Geçersiz ürün indeksi: " + i);
         }
+        return this;
     }
     //Ürünleri listeleyebilmek için kullanılan fonksiyon.
     private List<WebElement> getAllProducts(){

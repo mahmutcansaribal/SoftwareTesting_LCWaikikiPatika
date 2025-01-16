@@ -39,26 +39,29 @@ public class ProductTest extends BaseTest{
 
     @Step("Log in with username and password")
     public void performLogin() {
-        logOnPage.setEmail();
-        logOnPage.setContinueBtn();
-        logOnPage.setPassword();
-        logOnPage.setLoginBtn();
+        logOnPage
+                .setEmail()
+                .setContinueBtn()
+                .setPassword()
+                .setLoginBtn();
     }
 
     @Step("Select a category")
     public void selectCategory() {
-        categorySelection.moveToHeaderItem();
-        categorySelection.hoverOverTabHeaderItem();
-        categorySelection.clickOnCategoryZoneItem();
+        categorySelection
+                .moveToHeaderItem()
+                .hoverOverTabHeaderItem()
+                .clickOnCategoryZoneItem();
     }
     @Step("Apply filters and sorting options")
     public void applyFiltersAndSorting() {
-        productPage.setFilterOptionBody5_6();
-        productPage.setFilterOptionBody6_7();
-        productPage.setFilterOptionBody6();
-        productPage.setSelectColor();
-        productPage.setSelectSortBtn();
-        productPage.setBestSellers();
+        productPage
+                .setFilterOptionBody5_6()
+                .setFilterOptionBody6_7()
+                .setFilterOptionBody6()
+                .setSelectColor()
+                .setSelectSortBtn()
+                .setBestSellers();
     }
     @Step("Select product number {0} from the list")
     public void selectProduct(int productIndex) {

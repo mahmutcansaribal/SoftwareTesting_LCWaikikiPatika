@@ -13,6 +13,9 @@ import java.util.List;
 public class BasePage {
     private String baseFavoriteUrl = "https://www.lcw.com/favorilerim";
     private String baseUrl = "https://www.lcw.com/";
+    protected String email = "mahmutcansaribal_19@hotmail.com";
+    protected String password = "test123a";
+
     protected WebDriver driver;
     protected WebDriverWait wait;
     protected Actions actions;

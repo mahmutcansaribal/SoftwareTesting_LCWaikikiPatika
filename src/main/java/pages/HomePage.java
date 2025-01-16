@@ -30,7 +30,7 @@ public class HomePage extends BasePage {
     }
 
     //Giriş yap
-    public void goToLoginPage(){
+    public HomePage goToLoginPage(){
         wait.until(ExpectedConditions.visibilityOfElementLocated(cookiesAccept));
         click(cookiesAccept);
 
@@ -39,10 +39,12 @@ public class HomePage extends BasePage {
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(logOnBtn));
         click(logOnBtn);
+
+        return this;
     }
 
     // Sepete Git
-    public void goToCart(){
+    public HomePage goToCart(){
         wait.until(ExpectedConditions.visibilityOfElementLocated(cartItemCount));
         String count = find(cartItemCount).getText();
         int itemCount = Integer.parseInt(count);
@@ -51,9 +53,11 @@ public class HomePage extends BasePage {
         }else{
             System.out.println("Ürün bulunamadı!");
         }
+        return this;
     }
-    public void goToFavorites(){
+    public HomePage goToFavorites(){
         wait.until(ExpectedConditions.elementToBeClickable(favoritesBtnLocator));
         click(favoritesBtnLocator);
+        return this;
     }
 }

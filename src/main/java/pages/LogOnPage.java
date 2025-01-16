@@ -8,8 +8,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class LogOnPage extends BasePage {
-    String email = "mahmutcansaribal_19@hotmail.com";
-    String password = "Mahmutcan60,";
 
     By emailLocator = By.name("emailAndPhone");
     By continueBtn = By.xpath("//button[normalize-space()='Devam Et']");
@@ -18,32 +16,26 @@ public class LogOnPage extends BasePage {
     public LogOnPage(WebDriver driver){
         super(driver);
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(15));
-
     }
-    public void setEmail(){
+    public LogOnPage setEmail(){
         click(emailLocator);
         sendKeys(emailLocator,email);
+        return this;
     }
-    public void setContinueBtn(){
+    public LogOnPage setContinueBtn(){
         click(continueBtn);
+        return this;
     }
-    public void setPassword(){
+    public LogOnPage setPassword(){
         wait.until(ExpectedConditions.visibilityOfElementLocated(passwordLocator));
         sendKeys(passwordLocator,password);
+        return this;
     }
-    public void setLoginBtn(){
+    public LogOnPage setLoginBtn(){
         wait.until(ExpectedConditions.visibilityOfElementLocated(loginBtn));
         click(loginBtn);
         navigateToHomePage();
+        return this;
     }
 
-    //Capctha istenmiyorsa setLoginBtn içerisinden navigateTo Fonk aktif hale getirilebilir.
-//    public void threadFonk(){
-//   //Manuel olarak Telefon Captcha geçmek için koyuldu.
-//    try{
-//        Thread.sleep(25000);
-//    }catch (InterruptedException e){
-//        e.printStackTrace();
-//        }
-//    }
 }

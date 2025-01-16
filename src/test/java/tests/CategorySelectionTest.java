@@ -35,16 +35,18 @@ public class CategorySelectionTest extends BaseTest {
 
     @Step("Log in with username and password")
     public void performLogin() {
-        logOnPage.setEmail();
-        logOnPage.setContinueBtn();
-        logOnPage.setPassword();
-        logOnPage.setLoginBtn();
+        logOnPage
+                .setEmail()
+                .setContinueBtn()
+                .setPassword()
+                .setLoginBtn();
     }
 
     @Step("Select a category")
     public void selectCategory() {
-        categorySelection.moveToHeaderItem();
-        categorySelection.hoverOverTabHeaderItem();
-        categorySelection.clickOnCategoryZoneItem();
+        categorySelection
+                .moveToHeaderItem()
+                .hoverOverTabHeaderItem()
+                .clickOnCategoryZoneItem();
     }
 }

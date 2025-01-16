@@ -26,26 +26,29 @@ public class CategorySelection extends BasePage {
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(60));
     }
 
-    public void moveToHeaderItem() {
+    public CategorySelection moveToHeaderItem() {
         if (actions != null) {
-            wait.until(ExpectedConditions.visibilityOf(headerItem));  // Öğenin görünür olmasını bekleyin
-            if (headerItem.isDisplayed()) {  // Eğer öğe görünüyorsa
-                actions.moveToElement(headerItem).perform(); // Hover işlemi
+            wait.until(ExpectedConditions.visibilityOf(headerItem));
+            if (headerItem.isDisplayed()) {
+                actions.moveToElement(headerItem).perform();
             } else {
                 System.out.println("Öğe görünür değil!");
             }
         } else {
             System.out.println("Actions nesnesi null!");
         }
+        return this;
     }
-    public void hoverOverTabHeaderItem(){
+    public CategorySelection hoverOverTabHeaderItem(){
         wait.until(ExpectedConditions.visibilityOf(tabHeaderItem));
         actions.moveToElement(tabHeaderItem).perform();
+        return this;
     }
 
-    public void clickOnCategoryZoneItem(){
+    public CategorySelection clickOnCategoryZoneItem(){
         wait.until(ExpectedConditions.visibilityOfElementLocated(selectCategoryZoneItem));
         click(selectCategoryZoneItem);
+        return this;
     }
 
 }

@@ -37,9 +37,10 @@ public class CartPage extends BasePage{
     @FindBy(xpath = "//a[text()='ÖDEME ADIMINA GEÇ']")
     WebElement paymentStep;
 
-    public void itemPlus(){
+    public CartPage itemPlus(){
         wait.until(ExpectedConditions.elementToBeClickable(itemPlusLocator));
         click(itemPlusLocator);
+        return this;
     }
 
     public String setProductNameCheck(){
@@ -69,23 +70,26 @@ public class CartPage extends BasePage{
         return actualTotalPrice;
     }
 
-    public void setAddFavorite(){
+    public CartPage setAddFavorite(){
         threadFonk();
         wait.until(ExpectedConditions.visibilityOf(addFavoriteBtn));
         clickIfNotSelected(addFavoriteBtn);
+        return this;
     }
 
-    public void clickPaymentStep(){
+    public CartPage clickPaymentStep(){
         wait.until(ExpectedConditions.visibilityOf(paymentStep));
         threadFonk();
+        return this;
     }
 
-    public void clickIfNotSelected(WebElement element) {
+    public CartPage clickIfNotSelected(WebElement element) {
         if (!element.isSelected()) {
             wait.until(ExpectedConditions.elementToBeClickable(element)).click();
         } else {
             System.out.println("Öğe zaten seçili!");
         }
+        return this;
     }
 
     public void threadFonk(){

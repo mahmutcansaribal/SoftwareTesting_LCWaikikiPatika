@@ -19,14 +19,16 @@ public class ProductDetailsPage extends BasePage {
     By bodySizeLocator = By.cssSelector(".option-box.option-size-box.option-size-box__stripped");
     By addToCartLocator = By.cssSelector(".add-to-card");
 
-    public void selectBodySize(int i){
+    public ProductDetailsPage selectBodySize(int i){
         WebElement bodySizeElement = wait.until(ExpectedConditions.elementToBeClickable(bodySizes().get(i)));
         wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(".exploreBodyContainer-bg.showTool")));
         bodySizeElement.click();
+        return this;
     }
-    public void addToCart(){
+    public ProductDetailsPage addToCart(){
         WebElement addToCartButton = wait.until(ExpectedConditions.elementToBeClickable(addToCartLocator));
         addToCartButton.click();
+        return this;
     }
 
     private List<WebElement> bodySizes(){
