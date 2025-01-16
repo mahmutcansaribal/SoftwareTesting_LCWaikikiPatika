@@ -6,7 +6,7 @@
 ### [Proje Yapısı](#proje-yapısı)
 ### [Kullanılan Yapı](#kullanılan-yapı)
 ### [Test Senaryoları](#test-senaryoları)
-### [BaseTest ve BasePage Sınıfları Yapısı ](#basetest-ve-basepage-sınıfları-yapısı-)
+### [BaseTest ve BasePage Sınıfları Yapısı ](#basetest-ve-basepage-sınıfları-yapısı)
 
 ## Proje Açıklaması
 
@@ -54,7 +54,7 @@ Bu proje, **Page Object Model (POM)** tasarım desenini kullanarak oluşturulmu�
 | Cart Test               | Ürün detaylarını kontrol etme ve favorilere ekleme işlemleri.         | Pass   | Ürünler sepete eklenmeli ve favoriler ekranına gidilmeli.             | Ürünler başarıyla sepete eklendi ve favoriler ekranına gidildi. | Sepet işlemleri doğru çalıştı          |
 
 ---
-## BaseTest ve BasePage Sınıfları Yapısı 
+## BaseTest ve BasePage Sınıfları Yapısı
 ### BaseTest
 
 **BaseTest** sınıfı, tüm testlerin temelini oluşturmaktadır. Aşağıda bulunan işlemleri içerir.
