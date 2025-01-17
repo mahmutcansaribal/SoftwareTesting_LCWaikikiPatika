@@ -7,7 +7,8 @@
 ### [Kullanılan Yapı](#kullanılan-yapı)
 ### [Test Senaryoları](#test-senaryoları)
 ### [BaseTest ve BasePage Sınıfları Yapısı ](#basetest-ve-basepage-sınıfları-yapısı)
-
+### [Test Sınıfı ve Page Sınıfı Etkileşimi](#test-sınıfı-ve-page-sınıfı-etkileşimi)
+### [Raporlama Araçları : Allure Report ve Extent Report](#raporlama-araçları--allure-report-ve-extent-report)
 ## Proje Açıklaması
 
 Bu proje, e-ticaret platformu üzerinde kullanıcı akışlarını test etmek ve doğrulamak amacıyla geliştirilmiş bir otomasyon test paketidir. 
