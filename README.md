@@ -12,7 +12,7 @@
 
 Bu proje, e-ticaret platformu üzerinde kullanıcı akışlarını test etmek ve doğrulamak amacıyla geliştirilmiş bir otomasyon test paketidir. 
 Test senaryoları, kullanıcı girişinden, ürünü aramaya, filtreleme ve sıralama işlemlerine kadar çeşitli işlemleri kapsamaktadır.
-Proje, **Java**, **Selenium**, **TestNG** teknolojileri ve **Page Object Model** tasarım deseni kullanılarak geliştirilmiştir.
+Proje, **Java**, **Selenium**, **TestNG**, **Allure Report**, **Extent Report**, **Log4j2** teknolojileri ve **Page Object Model** tasarım deseni kullanılarak geliştirilmiştir.
 
 ---
 ## Çevresel Bilgiler
@@ -29,9 +29,10 @@ Proje, **Java**, **Selenium**, **TestNG** teknolojileri ve **Page Object Model**
 ## Kullanılan Teknolojiler ve Araçlar
 
 - **Programlama Dili** : Java
+- **JAVA JDK** : 21
 - **Test Framework** : TestNG
 - **Otomasyon Tool** : Selenium WebDriver
-- **Raporlama Tool** : Allure Report
+- **Raporlama Tool** : Allure Report, Extent Report, Log4j2
 - **Build Tool** : Maven
 ---
 ## Proje Yapısı
@@ -183,3 +184,81 @@ Loading animasyonunda testlerin başarısız olmasını engellemek için geçiş
 ```
 Bu tarz bir çok Page Class'da kullanılacak kodları tek seferde yazarak Clean Code ve DRY ilkesine bağlı kalmaya çalıştım.
 
+---
+
+## Test Sınıfı ve Page Sınıfı Etkileşimi
+
+Test sınıfları, sayfa sınıflarını kullanarak test senaryolarını çalıştırır. Aşağıda, HomeTest sınıfından bir örnek verilmiştir.
+
+```
+    HomePage homePage;
+
+    @Test
+    @Description("Test Description: Clicking the 'Sign In' button to navigate to the login page.")
+    @Severity(SeverityLevel.CRITICAL)
+    public void logInTest(){
+        homePage = new HomePage(driver);
+        homePage.goToLoginPage();
+    }
+```
+Bu test sınıfı, HomePage sayfasındaki öğeleri ve kullanıcı akışını test etmek amacıyla yazılmıştır. 
+HomePage sınıfı, ana sayfada bulunan öğelere erişim sağlayan ve bu öğelerle etkileşime giren yöntemleri içerir. 
+Bu sınıfta, kullanıcı girişine yönlendiren bir test senaryosu bulunmaktadır.
+- Test Adı: logInTest
+- Test Açıklaması: Bu test, ana sayfadaki "Sign In" (Giriş Yap) butonuna tıklayarak kullanıcıyı giriş sayfasına yönlendirmeyi doğrular.
+
+Test Adımı:
+- HomePage sınıfından bir örnek oluşturuluyor.
+- goToLoginPage() metodu kullanılarak ana sayfadan giriş sayfasına yönlendirilir.
+  
+Testin açıklaması ve kritik seviyesi, raporlama araçları (Allure, Extent Reports) tarafından raporlanarak testin kritik önemini belirtir. Bu, testin başarılı olmasının ve sistemin doğru şekilde çalışmasının kritik olduğunu gösterir.
+
+Sayfa sınıfları, her bir sayfada yapılacak işlemleri içerir.
+HomePage sınıfında, giriş sayfasına yönlendiren ``goToLoginPage()`` metodu bulunmaktadır.
+
+```
+    By cookiesAccept = By.id("cookieseal-banner-accept"); // Çerez kabul butonu
+    
+    @FindBy(id="user_1_")
+    WebElement logInBtn; // Giriş yap butonu
+    
+    public HomePage(WebDriver driver){
+        super(driver);
+        PageFactory.initElements(driver,this);
+        this.wait = new WebDriverWait(driver,Duration.ofSeconds(15));
+        this.actions = new Actions(driver);
+    }
+    
+    public HomePage goToLoginPage(){
+        wait.until(ExpectedConditions.visibilityOfElementLocated(cookiesAccept));
+        click(cookiesAccept);
+
+        wait.until(ExpectedConditions.visibilityOf(logInBtn));
+        actions.moveToElement(logInBtn).perform();
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(logOnBtn));
+        click(logOnBtn);
+
+        return this;
+    }
+```
+- By sınıfını kullanarak sayfadaki öğeleri tanımlar. Bu öğeler, çerez kabul butonu, giriş butonu, sepet ve favoriler gibi öğelerdir.
+- @FindBy ile de logInBtn öğesi tanımlanır, bu öğe PageFactory tarafından yönetilir.
+- super(driver) ile BasePage sınıfının constructor'ı çağrılır.
+- PageFactory.initElements(driver, this) ile sayfa nesneleri (elementler) başlatılır.
+- WebDriverWait ve Actions sınıfları tanımlanarak sayfa üzerindeki öğelerle etkileşime geçmek için hazır hale geliriz.
+- goToLoginPage(): Kullanıcıyı giriş sayfasına yönlendiren bir metot. Çerez kabul butonuna tıklanır, ardından giriş butonuna yönlendirilir.
+- Her bir metodun dönüş türü HomePage sınıfıdır. Bu, method chaining (metod zincirleme) yapılmasını sağlar ve her metod çağrısı sonrasında aynı HomePage nesnesine devam edilir. Örneğin, goToLoginPage().goToCart() gibi zincirleme işlemler mümkündür.
+
+---
+## Raporlama Araçları : Allure Report ve Extent Report
+
+Bu projede, test senaryolarının sonuçlarını görsel olarak sunmak için iki farklı raporlama aracı kullanılmaktadır: 
+**Allure Report** ve **Extent Report**. 
+Bu araçlar, testlerin başarı durumu, hatalar ve test süreci hakkında ayrıntılı bilgi sağlayarak, testlerin izlenebilirliğini artırır ve hata ayıklama sürecini kolaylaştırır.
+
+- **Allure Report**: Testlerin başarı, hata ve adım detaylarını grafiksel olarak sunar. Kullanıcı dostu ve etkileşimli raporlar sağlar. Test adımları ve hata mesajları gibi detayları gösterir.
+
+- **Extent Report:** Kapsamlı HTML raporları sunar. Test adımları, başarılar, hatalar ve ekran görüntüleri gibi multimedya öğeleriyle zenginleştirilmiş dinamik raporlar oluşturur.
+
+Her iki araç, testlerin izlenebilirliğini artırır ve hata ayıklamayı kolaylaştırır.
