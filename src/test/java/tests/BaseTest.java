@@ -7,6 +7,7 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import utilities.ExtentReportManager;
+import utilities.LogReport;
 
 @Listeners(ExtentReportManager.class)
 public class BaseTest {
@@ -16,6 +17,7 @@ public class BaseTest {
 
     @BeforeMethod
     public void setUp(){
+        LogReport.info("Test re starting");
         ChromeOptions options = new ChromeOptions();
        // options.addArguments("--disable-blink-features=AutomationControlled");
 
@@ -26,6 +28,7 @@ public class BaseTest {
 
     @AfterSuite
     public void tearDown(){
+        LogReport.info("Test re ending!");
         driver.quit();
     }
 }

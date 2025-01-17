@@ -38,7 +38,7 @@ public class CartTest extends BaseTest {
         applyFiltersAndSorting();
 
         selectProduct();
-        selectBodySize(1);
+        selectBodySize();
 
         addToCart();
         goToCart();
@@ -80,13 +80,13 @@ public class CartTest extends BaseTest {
                 .setSelectSortBtn()
                 .setBestSellers();
     }
-    @Step("Select product number {0} from the list")
+    @Step("Select product from the list")
     public void selectProduct() {
         productPage.selectProduct();
     }
-    @Step("Select body size option {0}")
-    public void selectBodySize(int bodySizeIndex) {
-        productDetailsPage.selectBodySize(bodySizeIndex);
+    @Step("Select body size option")
+    public void selectBodySize() {
+        productDetailsPage.selectBodySize();
     }
     @Step("Add the selected product to the cart")
     public void addToCart() {

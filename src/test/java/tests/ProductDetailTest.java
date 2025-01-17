@@ -31,7 +31,7 @@ public class ProductDetailTest extends BaseTest{
         selectCategory();
         applyFiltersAndSorting();
         selectProduct();
-        selectBodySize(1);
+        selectBodySize();
         addToCart();
 
     }
@@ -72,8 +72,8 @@ public class ProductDetailTest extends BaseTest{
     }
 
     @Step("Select body size option {0}")
-    public void selectBodySize(int bodySizeIndex) {
-        productDetailsPage.selectBodySize(bodySizeIndex);
+    public void selectBodySize() {
+        productDetailsPage.selectBodySize();
     }
 
     @Step("Add the selected product to the cart")
