@@ -3,26 +3,30 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
-import java.util.List;
+
 
 public class ProductDetailsPage extends BasePage {
 
     public ProductDetailsPage(WebDriver driver){
         super(driver);
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+        PageFactory.initElements(driver,this);
     }
 
-    By bodySizeLocator = By.cssSelector(".option-box.option-size-box.option-size-box__stripped");
     By addToCartLocator = By.cssSelector(".add-to-card");
+    @FindBy(xpath = "//button[contains(text(),'5-6 Yaş')]")
+    WebElement bodySize;
 
-    public ProductDetailsPage selectBodySize(int i){
-        WebElement bodySizeElement = wait.until(ExpectedConditions.elementToBeClickable(bodySizes().get(i)));
+    public ProductDetailsPage selectBodySize(){
+        wait.until(ExpectedConditions.visibilityOf(bodySize));
         wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(".exploreBodyContainer-bg.showTool")));
-        bodySizeElement.click();
+        bodySize.click();
         return this;
     }
     public ProductDetailsPage addToCart(){
@@ -31,9 +35,4 @@ public class ProductDetailsPage extends BasePage {
         return this;
     }
 
-    private List<WebElement> bodySizes(){
-        List<WebElement> bodysizes = findAllProducts(bodySizeLocator);
-        System.out.println("Toplam Body sayısı : "+bodysizes.size());
-        return bodysizes;
-    }
 }
