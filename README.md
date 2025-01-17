@@ -1,16 +1,35 @@
 
 # İçindekiler
 
-### [Proje Açıklaması](#proje-açıklaması)
-### [Çevresel Bilgiler](#çevresel-bilgiler)
-### [Kullanılan Teknolojiler ve Araçlar](#kullanılan-teknolojiler-ve-araçlar)
-### [Proje Yapısı](#proje-yapısı)
-### [Kullanılan Yapı](#kullanılan-yapı)
-### [Test Senaryoları](#test-senaryoları)
-### [BaseTest ve BasePage Sınıfları Yapısı](#basetest-ve-basepage-sınıfları-yapısı)
-### [Test Sınıfı ve Page Sınıfı Etkileşimi](#test-sınıfı-ve-page-sınıfı-etkileşimi)
-### [Raporlama Araçları: Allure Report ve Extent Report](#raporlama-araçları--allure-report-ve-extent-report)
-### [Proje Çalışır Ekran Görüntüsü/Videosu](#proje-çalışır-ekran-görüntüsüvideosu)
+- [Proje Açıklaması](#proje-açıklaması)
+- [Çevresel Bilgiler](#çevresel-bilgiler)
+- [Kullanılan Teknolojiler ve Araçlar](#kullanılan-teknolojiler-ve-araçlar)
+- [Proje Yapısı](#proje-yapısı)
+- [Test Senaryoları](#test-senaryoları)
+- [BaseTest ve BasePage Sınıfları Yapısı](#basetest-ve-basepage-sınıfları-yapısı)
+- [Test Sınıfı ve Page Sınıfı Etkileşimi](#test-sınıfı-ve-page-sınıfı-etkileşimi)
+- [Raporlama Araçları : Allure Report ve Extent Report](#raporlama-araçları-allure-report-ve-extent-report)
+- [Proje Çalışır Ekran Görüntüsü/Videosu](#proje-çalişir-ekran-görüntüsüvideosu)
+
+[//]: # (### [Proje Açıklaması]&#40;#proje-açıklaması&#41;)
+
+[//]: # (### [Çevresel Bilgiler]&#40;#çevresel-bilgiler&#41;)
+
+[//]: # (### [Kullanılan Teknolojiler ve Araçlar]&#40;#kullanılan-teknolojiler-ve-araçlar&#41;)
+
+[//]: # (### [Proje Yapısı]&#40;#proje-yapısı&#41;)
+
+[//]: # (### [Kullanılan Yapı]&#40;#kullanılan-yapı&#41;)
+
+[//]: # (### [Test Senaryoları]&#40;#test-senaryoları&#41;)
+
+[//]: # (### [BaseTest ve BasePage Sınıfları Yapısı]&#40;#basetest-ve-basepage-sınıfları-yapısı&#41;)
+
+[//]: # (### [Test Sınıfı ve Page Sınıfı Etkileşimi]&#40;#test-sınıfı-ve-page-sınıfı-etkileşimi&#41;)
+
+[//]: # (### [Raporlama Araçları: Allure Report ve Extent Report]&#40;#raporlama-araçları--allure-report-ve-extent-report&#41;)
+
+[//]: # (### [Proje Çalışır Ekran Görüntüsü/Videosu]&#40;#proje-çalışır-ekran-görüntüsüvideosu&#41;)
 
 ## Proje Açıklaması
 
@@ -255,7 +274,7 @@ HomePage sınıfında, giriş sayfasına yönlendiren ``goToLoginPage()`` metodu
 - Her bir metodun dönüş türü HomePage sınıfıdır. Bu, method chaining (metod zincirleme) yapılmasını sağlar ve her metod çağrısı sonrasında aynı HomePage nesnesine devam edilir. Örneğin, goToLoginPage().goToCart() gibi zincirleme işlemler mümkündür.
 
 ---
-## Raporlama Araçları : Allure Report ve Extent Report
+## Raporlama Araçları Allure Report ve Extent Report
 
 Bu projede, test senaryolarının sonuçlarını görsel olarak sunmak için iki farklı raporlama aracı kullanılmaktadır: 
 **Allure Report** ve **Extent Report**. 
