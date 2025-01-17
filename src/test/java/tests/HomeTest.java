@@ -6,7 +6,7 @@ import io.qameta.allure.SeverityLevel;
 import org.testng.annotations.Test;
 import pages.HomePage;
 
-public class LogInTest extends BaseTest {
+public class HomeTest extends BaseTest {
 
     HomePage homePage;
 

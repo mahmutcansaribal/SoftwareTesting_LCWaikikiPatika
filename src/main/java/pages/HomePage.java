@@ -15,12 +15,9 @@ public class HomePage extends BasePage {
     By cookiesAccept = By.id("cookieseal-banner-accept");
     @FindBy(id="user_1_")
     WebElement logInBtn;
-    //    @FindBy(xpath = "//a[@class='cart-action__btn cart-action__btn--bg-blue']")
-    //    WebElement logOnBtn;
     By logOnBtn = By.xpath("//a[@class='cart-action__btn cart-action__btn--bg-blue']");
     By cartContanierLocator = By.xpath("//span[normalize-space()='Sepetim']");
     By favoritesBtnLocator = By.xpath("//span[normalize-space()='Favorilerim']");
-    //Ürün sayısının artıp artmadığını kontrol etmek için sepeti buluyoruz.
     By cartItemCount = By.cssSelector(".badge-circle");
     public HomePage(WebDriver driver){
         super(driver);
