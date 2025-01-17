@@ -1,4 +1,8 @@
-#### Projeyi İndirme
+#### PROJE SON TEST KOŞUM TARİHİ
+
+- 18.01.2025 (PASS)
+
+#### PROJEYİ İNDİRME
 
 GitHub reposunu bilgisayarınıza git clone komutu ile indirebilirsiniz. Terminal veya komut satırına aşağıdaki komutu yazabilirsiniz:
 
@@ -61,7 +65,7 @@ Bu proje, **Page Object Model (POM)** tasarım desenini kullanarak oluşturulmu�
 
 | Test Name               | Test Scenario                                                         | Status | Expected Result                                                       | Actual Result                                                   | Açıklamalar                            |
 |-------------------------|-----------------------------------------------------------------------|--------|-----------------------------------------------------------------------|-----------------------------------------------------------------|----------------------------------------|
-| LogIn Test              | Kullanıcı giriş yapma butonuna tıklama işlemi.                        | Pass   | Giriş sayfası açılmalı.                                               | Giriş sayfası başarıyla açıldı.                                 | Giriş sayfası çalışıyor.               |
+| Home Test               | Kullanıcı giriş yapma butonuna tıklama işlemi.                        | Pass   | Giriş sayfası açılmalı.                                               | Giriş sayfası başarıyla açıldı.                                 | Giriş sayfası çalışıyor.               |
 | LogOn Test              | Kullanıcı giriş işlemi.                                               | Pass   | Kullanıcı giriş yapmalı.                                              | Kullanıcı başarıyla giriş yaptı.                                | Kullanıcı başarılı giriş yaptı.        |
 | Category Selection Test | Kategori seçme işlemi.                                                | Pass   | Kategori seçimi yapılmalı.                                            | Kategori başarıyla seçildi.                                     | Kategori seçimi doğru şekilde yapıldı. |
 | Product Test            | Ürün filtreleme, listeleme ve seçme işlemi.                           | Pass   | Ürünler filtrelenmeli ve listelenmeli                                 | Ürünler doğru şekilde listelendi.                               | Filtreleme ve ürün seçimi doğru        |
