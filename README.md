@@ -1,15 +1,17 @@
 
 # İçindekiler
+
 ### [Proje Açıklaması](#proje-açıklaması)
 ### [Çevresel Bilgiler](#çevresel-bilgiler)
 ### [Kullanılan Teknolojiler ve Araçlar](#kullanılan-teknolojiler-ve-araçlar)
 ### [Proje Yapısı](#proje-yapısı)
 ### [Kullanılan Yapı](#kullanılan-yapı)
 ### [Test Senaryoları](#test-senaryoları)
-### [BaseTest ve BasePage Sınıfları Yapısı ](#basetest-ve-basepage-sınıfları-yapısı)
+### [BaseTest ve BasePage Sınıfları Yapısı](#basetest-ve-basepage-sınıfları-yapısı)
 ### [Test Sınıfı ve Page Sınıfı Etkileşimi](#test-sınıfı-ve-page-sınıfı-etkileşimi)
-### [Raporlama Araçları : Allure Report ve Extent Report](#raporlama-araçları--allure-report-ve-extent-report)
-### [Proje Çalışır Ekran Görüntüsü/Videosu](#proje-çalişir-ekran-görüntüsüvideosu)
+### [Raporlama Araçları: Allure Report ve Extent Report](#raporlama-araçları--allure-report-ve-extent-report)
+### [Proje Çalışır Ekran Görüntüsü/Videosu](#proje-çalışır-ekran-görüntüsüvideosu)
+
 ## Proje Açıklaması
 
 Bu proje, LCW  e-ticaret platformunda kullanıcı akışlarını test etmek ve doğrulamak amacıyla geliştirilmiş bir otomasyon test paketidir. 
@@ -39,7 +41,7 @@ Proje, **Java**, **Selenium**, **TestNG**, **Allure Report**, **Extent Report**,
 ---
 ## Proje Yapısı
 Bu proje, **Page Object Model (POM)** tasarım desenini kullanarak oluşturulmuştur. POM, her sayfa için ayrı bir sınıf (Page Class) oluşturmayı ve testlerin bu sayfa nesneleriyle etkileşimde bulunmasını sağlar. Bu sayede, test senaryoları ve sayfa nesneleri birbirinden bağımsız hale gelir ve kodun bakımı kolaylaşır.
-### Kullanılan Yapı
+## Kullanılan Yapı
 
 - **Page Object**: Her web sayfası için ayrı bir sınıf (örneğin, `HomePage`, `ProductPage`, `CartPage`) oluşturulmuştur. Bu sınıflar, sayfanın elementleri ve bu elementlerle yapılacak işlemleri içerir.
 - **Test Sınıfları**: Test senaryoları, ilgili sayfa nesneleriyle etkileşimde bulunarak gerçekleştirilmektedir.
