@@ -7,8 +7,8 @@
 ### [Kullanılan Yapı](#kullanılan-yapı)
 ### [Test Senaryoları](#test-senaryoları)
 ### [BaseTest ve BasePage Sınıfları Yapısı ](#basetest-ve-basepage-sınıfları-yapısı)
-### [Test Sınıfı ve Page Sınıfı Etkileşimi](#test-sınıfı-ve-page-sınıfı-etkileşimi)
-### [Raporlama Araçları : Allure Report ve Extent Report](#raporlama-araçları--allure-report-ve-extent-report)
+- [Test Sınıfı ve Page Sınıfı Etkileşimi](#test-sınıfı-ve-page-sınıfı-etkileşimi)
+- [Raporlama Araçları : Allure Report ve Extent Report](#raporlama-araçları--allure-report-ve-extent-report)
 ## Proje Açıklaması
 
 Bu proje, e-ticaret platformu üzerinde kullanıcı akışlarını test etmek ve doğrulamak amacıyla geliştirilmiş bir otomasyon test paketidir. 
@@ -187,7 +187,7 @@ Bu tarz bir çok Page Class'da kullanılacak kodları tek seferde yazarak Clean 
 
 ---
 
-## Test Sınıfı ve Page Sınıfı Etkileşimi
+### Test Sınıfı ve Page Sınıfı Etkileşimi
 
 Test sınıfları, sayfa sınıflarını kullanarak test senaryolarını çalıştırır. Aşağıda, HomeTest sınıfından bir örnek verilmiştir.
 
@@ -252,7 +252,7 @@ HomePage sınıfında, giriş sayfasına yönlendiren ``goToLoginPage()`` metodu
 - Her bir metodun dönüş türü HomePage sınıfıdır. Bu, method chaining (metod zincirleme) yapılmasını sağlar ve her metod çağrısı sonrasında aynı HomePage nesnesine devam edilir. Örneğin, goToLoginPage().goToCart() gibi zincirleme işlemler mümkündür.
 
 ---
-## Raporlama Araçları : Allure Report ve Extent Report
+### Raporlama Araçları : Allure Report ve Extent Report
 
 Bu projede, test senaryolarının sonuçlarını görsel olarak sunmak için iki farklı raporlama aracı kullanılmaktadır: 
 **Allure Report** ve **Extent Report**. 
