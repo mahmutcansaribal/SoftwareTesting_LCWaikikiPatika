@@ -27,10 +27,9 @@ public class ProductPage extends BasePage {
     @FindBy(xpath = "//button[@class='dropdown-button__button']")
     WebElement selectSortBtn;
 
-    By selectSortBtn2 = By.xpath("//button[@class='dropdown-button__button']");
-    private int urunIndex = 2;
+    @FindBy(xpath = "//a[@title='Kapüşonlu Kız Çocuk Mont']//img[@class='product-image__image']")
+    WebElement selectProduct;
     By bestSellers = By.xpath("//a[normalize-space()='En çok satanlar']");
-    By currentPriceLocator = By.xpath("//div[@class='product-image']");
 
     public ProductPage(WebDriver driver){
         super(driver);
@@ -84,23 +83,10 @@ public class ProductPage extends BasePage {
     }
     public ProductPage selectProduct(){
         waitToLoadingAnimation();
-
-        List<WebElement> products = getAllProducts();
-        if (urunIndex >= 0 && urunIndex < products.size()) {
-            products.get(urunIndex).click();
-        } else {
-            System.out.println("Geçersiz ürün indeksi: " + urunIndex);
-        }
+        wait.until(ExpectedConditions.visibilityOf(selectProduct));
+        wait.until(ExpectedConditions.elementToBeClickable(selectProduct)).click();
         return this;
     }
-    //Ürünleri listeleyebilmek için kullanılan fonksiyon.
-    private List<WebElement> getAllProducts(){
-        List<WebElement> products = findAllProducts(currentPriceLocator);
-        System.out.println("Toplam Ürün sayısı : "+products.size());
-        return products;
-    }
-
-
 }
 
 
