@@ -7,13 +7,14 @@
 ### [Kullanılan Yapı](#kullanılan-yapı)
 ### [Test Senaryoları](#test-senaryoları)
 ### [BaseTest ve BasePage Sınıfları Yapısı ](#basetest-ve-basepage-sınıfları-yapısı)
-- [Test Sınıfı ve Page Sınıfı Etkileşimi](#test-sınıfı-ve-page-sınıfı-etkileşimi)
-- [Raporlama Araçları : Allure Report ve Extent Report](#raporlama-araçları--allure-report-ve-extent-report)
+### [Test Sınıfı ve Page Sınıfı Etkileşimi](#test-sınıfı-ve-page-sınıfı-etkileşimi)
+### [Raporlama Araçları : Allure Report ve Extent Report](#raporlama-araçları--allure-report-ve-extent-report)
+### [Proje Çalışır Ekran Görüntüsü/Videosu](#proje-çalişir-ekran-görüntüsüvideosu)
 ## Proje Açıklaması
 
-Bu proje, e-ticaret platformu üzerinde kullanıcı akışlarını test etmek ve doğrulamak amacıyla geliştirilmiş bir otomasyon test paketidir. 
+Bu proje, LCW  e-ticaret platformunda kullanıcı akışlarını test etmek ve doğrulamak amacıyla geliştirilmiş bir otomasyon test paketidir. 
 Test senaryoları, kullanıcı girişinden, ürünü aramaya, filtreleme ve sıralama işlemlerine kadar çeşitli işlemleri kapsamaktadır.
-Proje, **Java**, **Selenium**, **TestNG**, **Allure Report**, **Extent Report**, **Log4j2** teknolojileri ve **Page Object Model** tasarım deseni kullanılarak geliştirilmiştir.
+Proje, **Java**, **Selenium**, **TestNG**, **Allure Report**, **Extent Report**, **Log4j2** gibi teknolojilerle desteklenmiş ve **Page Object Model** tasarım deseni kullanılarak geliştirilmiştir.
 
 ---
 ## Çevresel Bilgiler
@@ -148,7 +149,7 @@ public class BasePage {
 - HomePage ve diğer Page Class'lar BasePage sınıfından türediği için, driver nesnesi bu sınıflarda da kullanılabilir.
 
 Bu şekilde homePage ve diğer Page sınıfları, driver nesnesine erişim sağlar.
-![Akış Şeması](https://github.com/mahmutcansaribal/SoftwareTesting_LCWaikikiPatika/blob/main/AkisSemasi/AkisSemasi.png?raw=true)
+![Akış Şeması](https://github.com/mahmutcansaribal/SoftwareTesting_LCWaikikiPatika/blob/main/assets/AkisSemasi.png?raw=true)
 
 ---
 ### BasePage
@@ -263,3 +264,8 @@ Bu araçlar, testlerin başarı durumu, hatalar ve test süreci hakkında ayrın
 - **Extent Report:** Kapsamlı HTML raporları sunar. Test adımları, başarılar, hatalar ve ekran görüntüleri gibi multimedya öğeleriyle zenginleştirilmiş dinamik raporlar oluşturur.
 
 Her iki araç, testlerin izlenebilirliğini artırır ve hata ayıklamayı kolaylaştırır.
+
+---
+
+### PROJE ÇALIŞIR EKRAN GÖRÜNTÜSÜ/VİDEOSU
+![Cart Test](https://github.com/mahmutcansaribal/SoftwareTesting_LCWaikikiPatika/blob/main/assets/CartTest.gif?raw=true)
