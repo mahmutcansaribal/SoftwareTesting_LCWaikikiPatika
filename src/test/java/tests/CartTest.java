@@ -1,9 +1,6 @@
 package tests;
 
-import io.qameta.allure.Description;
-import io.qameta.allure.Severity;
-import io.qameta.allure.SeverityLevel;
-import io.qameta.allure.Step;
+import io.qameta.allure.*;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.*;
@@ -21,6 +18,8 @@ public class CartTest extends BaseTest {
     @Test
     @Description("Test Description: From login to payment step, add a product to the cart, verify its details, add it to favorites, and proceed to the payment step.")
     @Severity(SeverityLevel.CRITICAL)
+    @Feature("Cart and Payment Management")
+    @Story("As a user, I want to add a product to my cart, verify its details, add it to favorites, and proceed to the payment step.")
     public void AddProductToCart() {
         homePage = new HomePage(driver);
         logOnPage = new LogOnPage(driver);
