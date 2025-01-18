@@ -1,9 +1,6 @@
 package tests;
 
-import io.qameta.allure.Description;
-import io.qameta.allure.Severity;
-import io.qameta.allure.SeverityLevel;
-import io.qameta.allure.Step;
+import io.qameta.allure.*;
 import org.testng.annotations.Test;
 import pages.CategorySelection;
 import pages.HomePage;
@@ -18,6 +15,8 @@ public class CategorySelectionTest extends BaseTest {
     @Test
     @Description("After logging in, select a category")
     @Severity(SeverityLevel.CRITICAL)
+    @Feature("Category Selection")
+    @Story("As a user, I want to select a category after logging in to browse products.")
     public void categorySelectionTest() {
         homePage = new HomePage(driver);
         logOnPage = new LogOnPage(driver);
