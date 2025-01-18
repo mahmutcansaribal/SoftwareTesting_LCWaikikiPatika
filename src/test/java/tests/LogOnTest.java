@@ -1,10 +1,7 @@
 package tests;
 
-import io.qameta.allure.Description;
-import io.qameta.allure.Severity;
-import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.*;
 
-import io.qameta.allure.Step;
 import org.testng.annotations.Test;
 import pages.HomePage;
 import pages.LogOnPage;
@@ -16,6 +13,8 @@ public class LogOnTest extends BaseTest {
     @Test
     @Description("Test Description: Logging in with valid credentials.")
     @Severity(SeverityLevel.CRITICAL)
+    @Feature("Authentication")
+    @Story("As a user, I want to log in with valid credentials to access my account.")
     public void logOnTest(){
         logOnPage = new LogOnPage(driver);
         homePage = new HomePage(driver);
