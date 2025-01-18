@@ -1,9 +1,6 @@
 package tests;
 
-import io.qameta.allure.Description;
-import io.qameta.allure.Severity;
-import io.qameta.allure.SeverityLevel;
-import io.qameta.allure.Step;
+import io.qameta.allure.*;
 import org.testng.annotations.Test;
 import pages.*;
 
@@ -19,6 +16,8 @@ public class ProductDetailTest extends BaseTest{
     @Test
     @Description("Test Description: Select a body size for the product and add it to the cart.")
     @Severity(SeverityLevel.CRITICAL)
+    @Feature("Product Details and Cart Management")
+    @Story("As a user, I want to select a product, choose a body size, and add it to my cart.")
     public void AddProductToCart(){
         homePage = new HomePage(driver);
         logOnPage = new LogOnPage(driver);

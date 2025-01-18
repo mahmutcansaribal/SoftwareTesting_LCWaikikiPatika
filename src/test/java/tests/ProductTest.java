@@ -1,9 +1,6 @@
 package tests;
 
-import io.qameta.allure.Description;
-import io.qameta.allure.Severity;
-import io.qameta.allure.SeverityLevel;
-import io.qameta.allure.Step;
+import io.qameta.allure.*;
 import org.testng.annotations.Test;
 import pages.CategorySelection;
 import pages.HomePage;
@@ -19,6 +16,8 @@ public class ProductTest extends BaseTest{
     @Test
     @Description("Test Description: Perform login, select a category, apply filters and sorting options and select a specific product from the filtered list.")
     @Severity(SeverityLevel.NORMAL)
+    @Feature("Product Selection and Filtering")
+    @Story("As a user, I want to filter and sort products within a selected category and choose a specific product.")
     public void selectProductWithFilterAndSorting(){
         homePage = new HomePage(driver);
         logOnPage = new LogOnPage(driver);
