@@ -1,6 +1,6 @@
 #### PROJE SON TEST KOŞUM TARİHİ
 
-- 18.01.2025 (PASS)
+- 19.01.2025 (PASS)
 
 #### PROJEYİ İNDİRME
 
