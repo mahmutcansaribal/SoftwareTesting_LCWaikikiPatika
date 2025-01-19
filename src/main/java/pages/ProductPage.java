@@ -27,7 +27,7 @@ public class ProductPage extends BasePage {
     @FindBy(xpath = "//button[@class='dropdown-button__button']")
     WebElement selectSortBtn;
 
-    @FindBy(xpath = "//a[@title='Kapüşonlu Kız Çocuk Mont']//img[@class='product-image__image']")
+    @FindBy(xpath = "//a[@title='Kapüşonlu Kız Çocuk Mont']//img[@class='product-image__image']") // //a[@title='Kapüşonlu Kız Çocuk Mont']//img[@class='product-image__image']
     WebElement selectProduct;
     By bestSellers = By.xpath("//a[normalize-space()='En çok satanlar']");
 
