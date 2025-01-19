@@ -104,7 +104,7 @@ Bu sınıf, tüm testlerde ortak kullanılan yapı taşlarını içerdiği için
 Proje içerisinden örnek bir Test Class;
 
 ````
-public class LogInTest extends BaseTest {
+public class HomeTest extends BaseTest {
 
     HomePage homePage;
 
@@ -121,21 +121,21 @@ public class LogInTest extends BaseTest {
 BaseTest Class, Test Class, Page Classes ve BasePage Class arasındaki zincir yapısı;
 ### Zincir Yapı
 
-1- LogInTest Class (BaseTest Extend Etme) 
+1- HomeTest Class (BaseTest Extend Etme) 
 
 ``public class LogInTest extends BaseTest {``
 
-- LogInTest Class, BaseTest Class'tan extend edilir.
+- HomeTest Class, BaseTest Class'tan extend edilir.
 - BaseTest Class, testlerin temelini oluşturur ve WebDriver nesnesi, testin başlatılması ve bitirlmesi gibi ortak işlemler tanımlanır
-- LogInTest Class, BaseTest'ı extend ederek. BaseTest sınıfındaki tüm özelliklere ve metotlara erişebilir. Yani driver gibi ortak nesneleri kullanabilir
+- HomeTest Class, BaseTest'ı extend ederek. BaseTest sınıfındaki tüm özelliklere ve metotlara erişebilir. Yani driver gibi ortak nesneleri kullanabilir
 
 2- HomePage Class vs. Driver Nesnesi Gönderme
 
 ``homePage = new HomePage(driver);``
 
-- LogInTest Class'ında, ``homePage`` nesnesi HomePage sınıfının bir örnegi olarak oluşturulur.
+- HomeTest Class'ında, ``homePage`` nesnesi HomePage sınıfının bir örnegi olarak oluşturulur.
 - Buradaki driver, BaseTest sınıfından gelir.
-- Bu sayede LogInTest Class, HomePage Classının Constructor'ına **driver** nesnesini iletebilir.
+- Bu sayede HomeTest Class, HomePage Classının Constructor'ına **driver** nesnesini iletebilir.
 
 3- HomePage Constructor ve super() Kullanımı
 
