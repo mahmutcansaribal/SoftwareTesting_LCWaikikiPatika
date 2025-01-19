@@ -281,6 +281,9 @@ Bu araçlar, testlerin başarı durumu, hatalar ve test süreci hakkında ayrın
 
 Her iki araç, testlerin izlenebilirliğini artırır ve hata ayıklamayı kolaylaştırır.
 
+![TestBasari](https://github.com/mahmutcansaribal/SoftwareTesting_LCWaikikiPatika/blob/main/assets/TestsSucces.png?raw=true)
+![CartTestAllureReport](https://github.com/mahmutcansaribal/SoftwareTesting_LCWaikikiPatika/blob/main/assets/CartTestAllureReport.png?raw=true)
+
 ---
 
 ## PROJE ÇALIŞIR EKRAN GÖRÜNTÜSÜ/VİDEOSU
